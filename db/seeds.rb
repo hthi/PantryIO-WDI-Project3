@@ -3,9 +3,13 @@ User.delete_all
 Recipe.delete_all
 Ingredient.delete_all
 
-user.create!()
+user1 = User.create!(name: , email: , password: , password_confirmation: )
+user2 = User.create!(name: , email: , password: , password_confirmation: )
+user3 = User.create!(name: , email: , password: , password_confirmation: )
+user4 = User.create!(name: , email: , password: , password_confirmation: )
+user5 = User.create!(name: , email: , password: , password_confirmation: )
 
-user.recipes.create
+user1.recipes.create!()
 
 ingredient.create
 
