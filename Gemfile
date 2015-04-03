@@ -7,6 +7,8 @@ gem 'rails-api'
 
 gem 'active_model_serializers'
 
+gem 'bcrypt'
+
 gem 'rack-cors', :require => 'rack/cors'
 
 gem 'spring', :group => :development
