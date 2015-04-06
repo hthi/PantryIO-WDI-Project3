@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(version: 20150403173832) do
     t.string   "title"
     t.string   "description"
     t.string   "image_url"
-    t.string   "ingredients"
+    t.string   "ingredients_list"
     t.integer  "rating"
     t.string   "directions"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   add_index "recipes", ["user_id"], name: "index_recipes_on_user_id", using: :btree
