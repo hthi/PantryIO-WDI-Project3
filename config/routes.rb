@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :recipes, except: [:new, :edit]
   resources :ingredients, except: [:new, :edit]
   resources :users, except: [:new, :edit]
+  resources :food2fork, only: [:show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
