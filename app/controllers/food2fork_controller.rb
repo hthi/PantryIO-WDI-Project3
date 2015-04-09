@@ -12,11 +12,19 @@ class Food2forkController < ApplicationController
   end
 
   def update
-    @search_response = Unirest.get "https://community-food2fork.p.mashape.com/search?key=444b4461faeb4aedd97ae42e37fcf8d0&" + params.to_query,
-     headers:{
-    "X-Mashape-Key" => "g575knzsswmshQyUn278VNGeMr3Bp11ZVMNjsnGbfEoYzBiMVj",
-    "Accept" => "application/json"
-  }
+    if params[:id] == "1"
+      @search_response = Unirest.get "https://community-food2fork.p.mashape.com/search?key=444b4461faeb4aedd97ae42e37fcf8d0&" + params.to_query,
+       headers:{
+      "X-Mashape-Key" => "g575knzsswmshQyUn278VNGeMr3Bp11ZVMNjsnGbfEoYzBiMVj",
+      "Accept" => "application/json"
+      }
+    else
+      @search_response = Unirest.get "https://community-food2fork.p.mashape.com/get?key=444b4461faeb4aedd97ae42e37fcf8d0&" + params.to_query,
+      headers:{
+      "X-Mashape-Key" => "g575knzsswmshQyUn278VNGeMr3Bp11ZVMNjsnGbfEoYzBiMVj",
+      "Accept" => "application/json"
+      }
+    end
     render json: @search_response.body
   end
 end

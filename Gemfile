@@ -9,6 +9,8 @@ gem 'active_model_serializers'
 
 gem 'unirest', '~> 1.1.2'
 
+gem 'pry-byebug'
+
 gem 'bcrypt'
 
 gem 'rack-cors', :require => 'rack/cors'
