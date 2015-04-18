@@ -1,12 +1,18 @@
 class UsersController < ApplicationController
 
-  def sign_in
+  def login
     user = User.find_by(name: params[:name])
     if user && user.authenticate(params[:password])
-      render json: {token: user.token}
+      session[:current_user_id] = user.token
+      # render json: {token: user.token}
+      render json: user, status: :accepted
     else
       head :unauthorized
     end
+  end
+
+  def logout
+    head :ok
   end
 
   def show
